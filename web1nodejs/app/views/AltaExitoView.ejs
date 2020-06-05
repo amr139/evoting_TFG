@@ -1,0 +1,28 @@
+<% extend('Default/Default') %>
+
+<div class="container salto">
+    <div class="alert alert-success" role="alert">
+        Registro completado correctamente
+    </div>
+
+    <div class="salto">
+        <h5 class="textoAzul">Paso 1</h5>
+        <p>Descargar la cartera digital mediante la App movil <a class="textMorado" href="https://streetcred.id/digital-wallet/">Streetcred Identity Wallet</a> desde los siguientes enlaces</p>
+        <div class="container salto">
+            <a href="https://play.google.com/store/apps/details?id=id.streetcred.apps.mobile" target="_blank"><img src="/images/android.png"></a>
+            <a href="https://apps.apple.com/us/app/streetcred-identity-agent/id1475160728" target="_blank"><img src="/images/ios.png"></a>
+        </div>
+    </div>
+
+    <div class="salto">
+        <h5 class="textoAzul">Paso 2</h5>
+        <p>Escanear con <span class="textMorado">Streetcred Identity Wallet</span> el siguiente codigo QR:</p>
+        <img id='qrCode' src="https://chart.googleapis.com/chart?cht=qr&chl=<%= QRURL %>&chs=300x300" />
+    </div>
+
+    <div class="salto">
+        <h5 class="textoAzul">Paso 3</h5>
+        <p>Usar la credencial soberana <s>oficial</s> del Gobierno de España en cualquier web compatible con SSI</p>
+    </div>
+
+</div>

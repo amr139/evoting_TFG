@@ -1,0 +1,128 @@
+<% extend('Default/Default') %>
+
+<div class="container salto">
+    <h2 class="textoAzul margenAbajo">Resultados</h2>
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td>Posición</td>
+                    <td>Partido</td>
+                    <td>Votos</td>
+                    <td>Posición</td>
+                    <td>Partido</td>
+                    <td>Votos</td>
+                </tr>
+            </thead>
+            <tbody id="resultados"></tbody>
+        </table>
+    </div>
+    <h2 class="textoAzul margenAbajo">Por comunidades autónomas</h2>
+    <div class="row">
+        <div class="col-6">
+            <div id="map" class="spain"></div>
+        </div>
+        <div id="info" class="col-6" style="visibility: hidden;">
+            <h2 id="ciudad" class="textoGris"></h2>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <td>Posición</td>
+                        <td>Partido</td>
+                        <td>Votos</td>
+                    </tr>
+                </thead>
+                <tbody id="desglose">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/js/raphael.min.js"></script>
+    <script src="/js/custom.js"></script>
+    <script>
+        result = <%- data %>
+        design = <%- design %>
+
+        function PintarTablaDetalle(distrito) {
+            var indice = 1;
+            var tabla = document.getElementById("desglose");
+            document.getElementById("info").setAttribute("style", "");
+            tabla.innerHTML = "";
+            document.getElementById("ciudad").innerText = distrito.region;
+            distrito.opciones.forEach(d => {
+                var linea = `<tr>
+                    <td>#${indice}</td>
+                    <td><img src="/data/images/${d.nombre}.png" class="iconito"> ${d.nombre}</td>
+                    <td>${d.contador}</td>
+                    </tr>`;
+                tabla.innerHTML += linea;
+                indice++;
+            })
+        }
+
+        function PintarTablaTotal(lista) {
+            
+            var tabla = document.getElementById("resultados");
+            console.log(tabla);
+            for(var index = 0; index < lista.length/2;index++){
+                console.log(index);
+                var e = lista[index];
+                console.log(e);
+                var linea = `<tr>
+                        <td>#${index+1}</td>
+                        <td><img src="/data/images/${e.nombre}.png" class="iconito"> ${e.nombre}</td>
+                        <td>${e.valor}</td>`;
+                
+                
+                
+                var indexMovido = index+(lista.length/2)
+                if(indexMovido <= lista.length){
+                    console.log(indexMovido);
+                    e = lista[indexMovido];
+                    console.log(e);
+                    linea += `<td>#${indexMovido+1}</td>
+                        <td><img src="/data/images/${e.nombre}.png" class="iconito"> ${e.nombre}</td>
+                        <td>${e.valor}</td>
+                        `;
+                    console.log(tabla.innerHTML);
+                }
+
+                linea += '</tr>';
+                tabla.innerHTML += linea;
+
+                
+            }
+        }
+
+        window.addEventListener('load', function () {
+            var total = [];
+            result.forEach(distrito => {
+                distrito.opciones.forEach(partido => {
+                    var index = total.findIndex(a => { return a.nombre == partido.nombre; })
+                    if (index < 0) {
+
+                        total[total.length] = { "nombre": partido.nombre, "valor": 0 }
+                        index = total.length - 1;
+                    }
+                    if (total[index] != null) {
+                        total[index]["valor"] += partido.contador;
+                    }
+
+                })
+
+                if (distrito.opciones[0].contador > 0) {
+                    var color = design[distrito.opciones[0].nombre].color;
+                    eval(distrito.nombreCorto).node.setAttribute('fill', color);
+                    eval(distrito.nombreCorto).node.addEventListener('click', function () { PintarTablaDetalle(distrito) });
+                }
+            });
+            total = total.sort(function (a, b) {
+                return +a.valor < +b.valor ? 1 : -1;
+            });
+            PintarTablaTotal(total);
+        });
+    </script>
+
+</div>

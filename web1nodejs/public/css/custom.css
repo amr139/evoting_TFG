@@ -1,0 +1,46 @@
+.cabecera {
+    background-color: #154481;
+}
+.textoAzul {
+    color: #154481;
+}
+.textMorado {
+    font-weight: bold;
+    color: #812dff;
+}
+.textoGris {
+    color: #707070;
+}
+.salto {
+    margin-top: 10px;
+}
+.center {
+    text-align: center !important;
+    margin: auto;
+    width: 50%;
+  }
+.textoCentrado {
+    text-align: center;
+} 
+.boton {
+    background: url("../images/boton.png") center no-repeat;
+    margin-bottom: 30px;
+    margin-top:30px;
+    cursor: pointer;
+}
+.borde {
+    min-height: 7.7em;
+    border: 1px solid #B8B8B8;
+}
+.margen {
+    padding-top: 1em;
+}
+.textoMasGrande{
+    font-size: 1.4em;
+}
+a:hover{
+    text-decoration: none;
+}
+.margenAbajo{
+    margin-bottom: 30px;
+}

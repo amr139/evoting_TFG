@@ -1,0 +1,27 @@
+<% extend('Default/Default') %>
+
+<div class="container salto">
+    <h2 class="textoAzul">Formulario de Alta</h2>
+    <p>Bienvenido al formulario de registro en el servicio de Identidad Soberana del Gobierno de España</p>
+ 
+    <%if (Error!="") {%>
+    <div class="alert alert-danger" role="alert">
+        <%- Error %>
+    </div>
+    <% } %>
+
+    <form id="t" method="POST">
+        <div class="form-group">
+            <input name="nombre" type="text" class="form-control" placeholder="Nombre completo" value="<%= Data.nombre %>" required />
+        </div>
+        <div class="form-group">
+            <input name="dni" type="text" class="form-control" placeholder="DNI" value="<%= Data.dni %>" required />
+        </div>
+        <div class="form-group">
+            <input name="ciudad" type="text" class="form-control" placeholder="Ciudad" value="<%= Data.ciudad %>" required />
+        </div>
+
+        <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
+
+</div>

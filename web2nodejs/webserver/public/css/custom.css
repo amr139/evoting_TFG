@@ -1,0 +1,139 @@
+.cabecera {
+    background-color: #212121;
+}
+.encabezado{
+    height: 250px;
+    line-height: 250px;
+    text-align: center;
+}
+
+.textoGris {
+    color: #212121
+}
+
+.textMorado {
+    font-weight: bold;
+    color: #812dff;
+}
+
+.salto {
+    margin-top: 30px;
+}
+.center {
+    text-align: center !important;
+    margin: auto;
+  }
+.textoCentrado {
+    text-align: center;
+} 
+
+.boton1,.boton2 {
+    cursor: pointer;
+}
+
+.boton1:hover .imgOverlay1 {
+    opacity: 1;
+}
+.boton2:hover .imgOverlay2 {
+    opacity: 1;
+}
+
+.imgButton {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+.imgOverlay1 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #212121;
+  }
+  .imgOverlay2 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #212121;
+  }
+
+
+.imgText {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.borde {
+    min-height: 7.7em;
+    border: 1px solid #B8B8B8;
+}
+.margen {
+    padding-top: 1em;
+}
+.textoMasGrande{
+    font-size: 1.4em;
+}
+a:hover{
+    text-decoration: none;
+}
+.margenAbajo{
+    margin-bottom: 30px;
+}
+.imageBlur{
+    background-size: auto;
+    background-size: 250px 250px;
+    width: 250px;
+    height: 250px;
+    /* you need to match the shadow color to your background or image border for the desired effect*/
+    box-shadow: 0 0 8px 8px white inset;
+   
+}
+.divCenter{
+    margin:0 auto;
+}
+.bloqueSize{
+    height: 250px;
+}
+.piepagina{
+    margin-top:50px
+}
+.opcion{
+    width: 64px;
+}
+.opcionGris{
+    filter: grayscale(100%);
+}
+.opcionGrande{
+    width: 128px;
+}
+.cuadrado64{
+    width: 64px !important;
+    height: 64px !important;
+}
+.spain {
+    background-image: url(/images/ccaa.svg);
+    background-repeat: no-repeat;
+}
+.iconito{
+    width: 32px;
+}

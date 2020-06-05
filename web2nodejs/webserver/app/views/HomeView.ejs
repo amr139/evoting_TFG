@@ -1,0 +1,65 @@
+<% extend('Default/Default') %>
+
+<div class="container salto">
+    <div class="row center">
+        <div class="col-6 my-auto">
+            <h2>Bienvenido a eVoting</h2>
+            <p>Sistema de votación de las Elecciones Generales de España</p>
+        </div>
+        <div class="col-6 my-auto">
+            <div class="imageBlur divCenter" style="background-image: url('/images/map.jpg');"></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container salto">
+    <div class="row center">
+        <div class="col-6 my-auto">
+            <div class="imageBlur divCenter" style="background-image: url('/images/blockchain.jpg');"></div>
+        </div>
+        <div class="col-6 my-auto">
+            <h2>Basado en Blockchain</h2>
+            <p>Le aporta las siguientes caracteristicas: incorruptible, descentralizado, informacion distribuida,
+                consenso...</p>
+        </div>
+    </div>
+</div>
+
+<div class="container salto">
+    <div class="row center bloqueSize">
+        <div class="col-6 my-auto">
+            <h2>Autenticación SSI</h2>
+            <p>Compatible con los sistemas de Identidad Soberana del Gobierno de España mediante la APP <span
+                    class="textMorado">Streetcred Identity Wallet</span>
+            </p>
+        </div>
+        <div class="col-6 my-auto">
+            <img src="images/streetcred.png" />
+        </div>
+
+    </div>
+</div>
+
+<div class="container salto">
+    <div class="row center">
+        <div class="col-6 my-auto boton1">
+            <img class="imgButton" src="images/votar.png" />
+            <div class="imgOverlay1">
+                <h2 class="imgText">Votar!</h2>
+            </div>
+        </div>
+        <div class="col-6 my-auto boton2">
+            <img class="imgButton" src="images/resultados.png" />
+            <div class="imgOverlay2">
+                <h2 class="imgText">Ver resultados!</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.getElementsByClassName("boton1")[0].addEventListener('click', () => { window.location.replace('/login'); });
+    document.getElementsByClassName("boton2")[0].addEventListener('click', () => { window.location.replace('/resultados'); });
+</script>

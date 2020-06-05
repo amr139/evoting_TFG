@@ -1,0 +1,49 @@
+<% extend('Default/Default') %>
+
+<div class="container salto">
+    <h2 class="textoAzul">Inicio</h2>
+    <p>Bienvenido al servicio de Identidad Soberana del Gobierno de España</p>
+</div>
+
+<div class="container salto">
+    <h2 class="textoAzul">¿Qué es la Identidad Soberana?</h2>
+    <p class="text-justify">El problema de la identidad ha sido un asunto sin solución desde los inicios de
+        Internet. Con el aumento del uso de las redes sociales, la actividad digital de los usuarios ha crecido
+        exponencialmente, creando un nuevo concepto de identidad digital compuesto de muchos perfiles digitales. Una
+        situación que genera un rastro digital que es un arma de doble filo: una gran oportunidad para ofrecer servicios
+        de valor para el usuario, pero a su vez, una gran responsabilidad para la gestión de esa información, ya que en
+        la mayoría de los casos son datos sensibles propiedad de los usuarios.</p>
+    <p class="text-justify">Durante este mismo período, las tecnologías Blockchain han surgido como un nuevo
+        paradigma de los sistemas de información descentralizados, donde los datos se registran de manera única y se
+        distribuyen en toda la red mediante un mecanismo de consenso para validarlos sin ninguna autoridad centralizada
+        o federada.</p>
+    <p class="text-justify">En el contexto de la identidad, estas dos situaciones aparentemente no
+        relacionadas han generado una nueva oportunidad con el concepto de identidad soberana (Self-Sovereign identity –
+        SSI). Es decir, para asegurar que el usuario pueda: recuperar la propiedad de sus datos, que sirven como su
+        identidad; así como controlar quién tiene acceso a cualquier información específica, qué parte de su información
+        se comparte, y lo más importante, cancelar el acceso cuando lo desee.</p>
+</div>
+
+<div class="container salto">
+    <h2 class="textoAzul">¿Cómo se utiliza la Identidad Soberana?</h2>
+    <p class="text-justify">Se basa en dos herramientas: una aplicación móvil con un nuevo protocolo de comunicación de
+        identidad y de la tecnología Blockchain o de mayor distribución (DLT). La aplicación móvil del usuario es una
+        cartera de identidad similar a la cartera física donde se guardan los documentos de identificación (documento de
+        identidad, licencia de conducir, etc.), lo que hace que el usuario sea responsable de las identificaciones que
+        presenta y a quién se las muestra. El nuevo protocolo de identidad es una nueva capa de servicio que conecta
+        entre las carteras (wallets) con las empresas, intercambiando sus IDs y confiando en ellas, para que puedan
+        iniciar una transacción segura y confiable. Finalmente, la tecnología Blockchain actúa como la estructura base
+        descentralizada donde las transacciones se pueden registrar y la validez de la información la establece la
+        propia red en lugar de una sola autoridad.</p>
+</div>
+
+<div class="container borde boton">
+    <div class="center margen">
+        <h3 class="textoGris">Registro SSI</h3>
+        <p class="textoGris textoMasGrande"> Cómo darse de alta en SSI</p>
+    </div>
+</div>
+
+<script>
+    document.getElementsByClassName("boton")[0].addEventListener('click', () => { window.location.replace('/alta'); });
+</script>

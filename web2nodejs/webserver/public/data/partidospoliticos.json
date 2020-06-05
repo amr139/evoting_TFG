@@ -1,0 +1,18 @@
+{
+    "PSOE": { "color":"#f31912","nombre": "Partido Socialista Obrero Español"},
+    "PP": { "color":"#00577F","nombre": "Partido Popular"},
+    "VOX": { "color":"#7CBD2A","nombre": "VOX"},
+    "UP": { "color":"#683064","nombre": "Unidas Podemos"},
+    "Cs": { "color":"#fa5000","nombre": "Ciudadanos"},
+    "ERC": { "color":"#e85163","nombre": "Esquerra Republicana de Catalunya"},
+    "JxCAT": { "color":"#3b4248","nombre": "Junts per Catalunya"},
+    "PNV": { "color":"#005000","nombre": "Partido Nacionalista Vasco"},
+    "EHB": { "color":"#009a92","nombre": "Euskal Herria Bildu"},
+    "MP": { "color":"#0fddc4","nombre": "MAS PAIS"},
+    "CUP": { "color":"#ffed00","nombre": "Candidatura de Unidad Popular"},
+    "CCa": { "color":"66CCFF","nombre": "Coalición Canaria"},
+    "Na+": { "color":"#ededed","nombre": "Navarra Suma"},
+    "BNG": { "color":"#76B2E1","nombre": "Bloque Nacionalista Galego"},
+    "PRC": { "color":"#bfcd16","nombre": "Partido Regionalista de Cantabria"},
+    "TE": { "color":"#037252","nombre": "TERUEL EXISTE"}
+}

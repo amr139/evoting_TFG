@@ -1,0 +1,59 @@
+<% extend('Default/Default') %>
+
+<div class="container salto">
+
+    <form id="formulario" method="POST" action="">
+        <input id="valor" name="valor" type="hidden">
+        <% Object.keys(party).forEach( p => { %>
+        <img class="opcion" src="/data/images/<%= p %>.png" alt="<%= p %>" data-descripcion="<%= party[p].nombre %>">
+        <% }) %>
+    </form>
+
+    <div id="mostrar" style="visibility: hidden" class="container salto">
+        <div class="row center">
+            <div class="col-12 my-auto">
+
+                <img class="opcionGrande" id="mostrar_imagen">
+
+
+                <p id="mostrar_texto"></p>
+                <button id="trigger" class="btn btn-primary" type="submit">Votar!</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function aplicarFiltro(icono){
+            var listaImagenes = document.getElementsByClassName("opcion");
+
+            for (var i = 0; i < listaImagenes.length; i++) {
+                if(listaImagenes[i].getAttribute("alt")==icono.getAttribute("alt")){
+                    listaImagenes[i].setAttribute("class","opcion");
+                }else {
+                    listaImagenes[i].setAttribute("class","opcion opcionGris");
+                }
+            }
+        }
+
+        function cargarImagen(icono) {
+            document.getElementById("mostrar").style.visibility = "visible";
+            var imagen = document.getElementById("mostrar_imagen");
+            var texto = document.getElementById("mostrar_texto");
+            imagen.setAttribute("src", icono.currentSrc);
+            texto.innerText = "Has seleccionado " + icono.getAttribute("data-descripcion");
+            document.getElementById("valor").value = icono.getAttribute("alt");
+            aplicarFiltro(icono);
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var listaImagenes = document.getElementsByClassName("opcion");
+            for (var i = 0; i < listaImagenes.length; i++) {
+                listaImagenes[i].addEventListener('click', function () { cargarImagen(this) });
+            }
+            document.getElementById("trigger").addEventListener("click", function() {document.getElementById("formulario").submit();})
+        });
+
+
+    </script>
+
+</div>

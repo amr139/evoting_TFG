@@ -1,0 +1,35 @@
+<% extend('Default/Default') %>
+
+<div class="container salto">
+    <h2 class="textoAzul margenAbajo">Credenciales expedidas</h2>
+
+    <div class="container"></div>
+    <% var i = 1; data.forEach((d) => { %>
+            <% if(i & 1) { %>
+                <div class="row">
+            <% } %>
+
+            <div class="col-6">
+            <% var status = (d.state == 'Issued')?'success':'warning'; %>
+                     
+            <div class="card margenAbajo">
+                <div class="card-header bg-<%= status %>">
+                    <%= d.credentialId %>
+                </div>
+                <div class="card-body">
+                    <% Object.keys(d.values).forEach((e) => { %>
+                        <li><%= d.values[e] %></li>
+                    <% }) %>
+                </div>
+            </div>
+                
+            </div>
+            <% if (!(i & 1)) { %>
+                </div>
+            <% } %>
+            <% i++ %>       
+    <% }) %>
+    </div>
+</div>
+
+</div>
